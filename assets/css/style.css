@@ -146,6 +146,7 @@
   border-radius: 3px;
   height: 36px;
   width: 100%;
+  line-height: 2;
   padding: 5px;
   background-color: #fbfbfb;
   border: 1px solid #d9d9d9;
@@ -170,6 +171,10 @@
 /* セレクトボックスのスタイル */
 .select-area {
   position: relative;
+  margin-top: 8px;
+}
+.select-area > .input-area {
+  margin-top: 0;
 }
 
 .select-area::after {
@@ -210,6 +215,7 @@
   color: #545658;
   font-size: 16px;
   margin-top: 5px;
+  display: flex;
 }
 
 .gender-content {
@@ -257,7 +263,7 @@
 }
 
 /* コース選択 */
-.course-input {
+input[type=checkbox] {
   display: none;
 }
 .course-option {
@@ -270,6 +276,7 @@
 .course-option-text {
   position: relative;
   padding-left: 25px;
+  color: #545658;
 }
 
 .course-option-text::before {
@@ -277,20 +284,20 @@
   content: "";
   top: 50%;
   left: 0;
-  transform: translateY(-50%);
-  background-color: #fbfbfb;
   border: 1px solid #d9d9d9;
   height: 15px;
   width: 15px;
+  margin-top: -8px;
 }
 
-.course-input:checked + span::after {
+.course-input:checked + .course-option-text::after {
   content: "";
   position: absolute;
   left: 6px;
-  top: -15%;
+  top: 50%;
   height: 16px;
-  width: 7px;
+  width: 8px;
+  margin-top: -12px;
   border-right: 3px solid #01bfbd;
   border-bottom: 3px solid #01bfbd;
   transform: rotate(45deg);
@@ -344,4 +351,26 @@
 
 .resend-mail {
   display: inline-block;
+}
+
+
+
+
+
+.checkbox01::after {
+  border-right: 3px solid #ed7a9c;
+  border-bottom: 3px solid #ed7a9c;
+  content: '';
+  display: block;
+  height: 9px;
+  left: 10px;
+  margin-top: -7px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 5px;
+}
+input[type=checkbox]:checked + .checkbox01::after {
+  opacity: 1;
 }
