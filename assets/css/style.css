@@ -132,16 +132,24 @@
 }
 
 /* 共通スタイル */
+.wrapper {
+  color: #545658;
+}
+
 .row:not(:first-child) {
   margin-top: 20px;
 }
+
+.label {
+  font-size: 12px;
+}
+
 .alert {
   color: #dd4b39;
 }
 
 /* inputのスタイル */
 .input-area {
-  background: transparent;
   box-sizing: border-box;
   border-radius: 3px;
   height: 36px;
@@ -151,8 +159,8 @@
   background-color: #fbfbfb;
   border: 1px solid #d9d9d9;
   margin-top: 5px;
-  color: #545658;
   font-size: 13px;
+  color: #545658;
 }
 
 /* inputの設定 */
@@ -165,7 +173,55 @@
 }
 
 .input-init:not(select):focus {
-  box-shadow: 0 0 0 2px rgb(215, 250, 242);
+  box-shadow: 0 0 0 1.5px rgb(217, 252, 253);
+  background-color: #fff;
+}
+/* radioボタン（性別） */
+input[type="radio"] {
+  display: none;
+}
+
+.radio-contents {
+  font-size: 16px;
+  margin-top: 5px;
+  display: flex;
+}
+
+.radio-content {
+  position: relative;
+  display: inline-block;
+  padding: 3px 3px 3px 20px;
+  cursor: pointer;
+}
+
+.radio-content:not(:first-child) {
+  margin-left: 15px;
+}
+
+.radio-content span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 14px;
+  width: 14px;
+  background-color: #fbfbfb;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+}
+
+/* ラジオボタンチェック時にafterを表示 */
+.radio-input:checked +  span::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  height: 8px;
+  width: 8px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #01bfbd;
 }
 
 /* セレクトボックスのスタイル */
@@ -173,7 +229,7 @@
   position: relative;
   margin-top: 8px;
 }
-.select-area > .input-area {
+.select-area .input-area {
   margin-top: 0;
 }
 
@@ -190,96 +246,23 @@
   border-bottom: 2px solid #d9d9d9;
 }
 
-/* form-name */
-
-.name-box {
-  display: flex;
-}
-
-.label {
-  display: block;
-  font-size: 12px;
-  color: #545658;
-}
-
-.name {
-  margin-left: 16px;
-}
-
-.name:first-child {
-  margin-left: 0;
-}
-
-/* 性別 */
-.gender-contents {
-  color: #545658;
-  font-size: 16px;
-  margin-top: 5px;
-  display: flex;
-}
-
-.gender-content {
-  cursor: pointer;
-}
-
-.gender-content:not(:first-child) {
-  margin-left: 15px;
-}
-
-.gender-input {
+/* checkbox（コース選択） */
+input[type="checkbox"] {
   display: none;
 }
-
-.gender-content span {
-  position: relative;
-  display: inline-block;
-  padding: 3px 3px 3px 20px;
-}
-
-.gender-content span::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 14px;
-  width: 14px;
-  background-color: #fbfbfb;
-  border: 1px solid #d9d9d9;
-  border-radius: 50%;
-}
-
-/* ラジオボタンチェック時にafterを表示 */
-.gender-input:checked + span::after {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 50%;
-  height: 8px;
-  width: 8px;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  background-color: #01bfbd;
-}
-
-/* コース選択 */
-input[type=checkbox] {
-  display: none;
-}
-.course-option {
+.check-box {
   margin-top: 10px;
 }
-.course-option:nth-of-type(1) {
+.check-box:nth-of-type(1) {
   margin-top: 5px;
 }
 
-.course-option-text {
+.check-box-text {
   position: relative;
   padding-left: 25px;
-  color: #545658;
 }
 
-.course-option-text::before {
+.check-box-text::before {
   position: absolute;
   content: "";
   top: 50%;
@@ -290,7 +273,7 @@ input[type=checkbox] {
   margin-top: -8px;
 }
 
-.course-input:checked + .course-option-text::after {
+.check-box-input:checked + .check-box-text::after {
   content: "";
   position: absolute;
   left: 6px;
@@ -301,6 +284,20 @@ input[type=checkbox] {
   border-right: 3px solid #01bfbd;
   border-bottom: 3px solid #01bfbd;
   transform: rotate(45deg);
+}
+
+/* form-name */
+
+.name-box {
+  display: flex;
+}
+
+.name {
+  margin-left: 16px;
+}
+
+.name:first-child {
+  margin-left: 0;
 }
 
 /* 備考 */
@@ -354,23 +351,3 @@ input[type=checkbox] {
 }
 
 
-
-
-
-.checkbox01::after {
-  border-right: 3px solid #ed7a9c;
-  border-bottom: 3px solid #ed7a9c;
-  content: '';
-  display: block;
-  height: 9px;
-  left: 10px;
-  margin-top: -7px;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  transform: rotate(45deg);
-  width: 5px;
-}
-input[type=checkbox]:checked + .checkbox01::after {
-  opacity: 1;
-}

@@ -41,10 +41,10 @@
             <!-- 性別 -->
             <div class="row gender">
               <p class="label">性別</p>
-              <div class="gender-contents">
-                <label class="gender-content"><input type="radio" value="men" name="gender" class="gender-input"><span>男性</span></label>
-                <label class="gender-content"><input type="radio" value="women" name="gender" class="gender-input"><span>女性</span></label>
-                <label class="gender-content"><input type="radio" value="other" name="gender" class="gender-input"><span>その他</span></label>
+              <div class="radio-contents">
+                <label class="radio-content"><input type="radio" value="men" name="gender" class="radio-input"><span>男性</span></label>
+                <label class="radio-content"><input type="radio" value="women" name="gender" class="radio-input"><span>女性</span></label>
+                <label class="radio-content"><input type="radio" value="other" name="gender" class="radio-input"><span>その他</span></label>
               </div>
             </div>
             <!-- 出身 -->
@@ -61,7 +61,9 @@
             </div>
             <!-- メールアドレス -->
             <div class="email row">
-              <label for="email"><p class="label">Eメール<span class="alert"> ※</span></p></label>
+              <label for="email">
+                <p class="label">Eメール<span class="alert"> ※</span></p>
+              </label>
               <input type="email" id="email" name="email" class="input-init input-area" placeholder="ex) hoge@example.com" required>
             </div>
             <!-- 電話番号 -->
@@ -71,28 +73,32 @@
             </div>
             <!-- パスワード -->
             <div class="password row">
-              <label for="password"><p class="label">パスワード<span class="alert"> ※</span></p></label>
+              <label for="password">
+                <p class="label">パスワード<span class="alert"> ※</span></p>
+              </label>
               <input type="password" id="password" name="password" class="input-init input-area" required>
             </div>
             <!-- パスワード（確認用） -->
             <div class="password row">
-              <label for="password-confirm"><p class="label">パスワード(確認用)<span class="alert"> ※</span></p></label>
+              <label for="password-confirm">
+                <p class="label">パスワード(確認用)<span class="alert"> ※</span></p>
+              </label>
               <input type="password" id="password-confirm" name="password-confirm" class="input-init input-area" required>
             </div>
             <!-- 希望コース（複数チェク） -->
-            <div class="course row">
+            <div class="row">
               <p class="label">希望コース</p>
-              <div class="course-option">
-                <input type="checkbox" name="course" value="frontend" id="frontend" class="course-input">
-                <label for="frontend" class="course-option-text">フロントエンド</label>
+              <div class="check-box">
+                <input type="checkbox" name="course" value="frontend" id="frontend" class="check-box-input">
+                <label for="frontend" class="check-box-text">フロントエンド</label>
               </div>
-              <div class="course-option">
-                <input type="checkbox" name="course" value="backend" id="backend" class="course-input">
-                <label for="backend" class="course-option-text">バックエンド</label>
+              <div class="check-box">
+                <input type="checkbox" name="course" value="backend" id="backend" class="check-box-input">
+                <label for="backend" class="check-box-text">バックエンド</label>
               </div>
-              <div class="course-option">
-                <input type="checkbox" name="course" value="app" id="app" class="course-input">
-                <label for="app" class="course-option-text">アプリ</label>
+              <div class="check-box">
+                <input type="checkbox" name="course" value="app" id="app" class="check-box-input">
+                <label for="app" class="check-box-text">アプリ</label>
               </div>
             </div>
             <!-- 備考 -->
