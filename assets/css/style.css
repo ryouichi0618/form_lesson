@@ -172,10 +172,15 @@
   resize: none;
 }
 
-.input-init:not(select):focus {
+:not(.submit-button)  + .input-init:focus {
   box-shadow: 0 0 0 1.5px rgb(217, 252, 253);
   background-color: #fff;
 }
+
+.input-init:not(select):focus {
+  background-color: #fff;
+}
+
 /* radioボタン（性別） */
 input[type="radio"] {
   display: none;
@@ -310,12 +315,18 @@ input[type="checkbox"] {
   background-color: #01bfbd;
   color: #fff;
   border: 1px solid #01bfbd;
+  transition: 0.3s;
 }
 
 .submit-button:hover {
-  transition: 0.3s;
   background-color: #00a8a5;
 }
+
+.submit-button:active {
+  color: #01bfbd;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
 
 /*--- 利用規約 ---*/
 .agreement {
